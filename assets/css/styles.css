@@ -226,7 +226,7 @@ a:hover {
   background-size: cover;
   color: #7C7C7C;
   padding: 30px 0 35px 0;
-  height: 600px;
+  height: 100%;
   position: relative;
 }
 
