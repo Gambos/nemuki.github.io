@@ -1,0 +1,14 @@
+<header id="header">
+  <a href="https://mastodon.online/home" id="banner-link">
+    <div id="head" class="parallax" data-parallax-speed="2" style="background-image:url('{{ .Site.BaseURL }}{{ .Site.Params.banner }}');">
+      <h1 id="logo" class="text-center">
+        <span class="title">{{ .Site.Params.name }}</span>
+        <span class="tagline">{{ .Site.Params.description }}<br>
+          <a href="mailto:{{ .Site.Params.email }}">{{ .Site.Params.email }}</a>
+        </span>
+    </h1>
+  </a>
+</div>
+
+{{ partial "head/menu.html" . }}
+</header>
