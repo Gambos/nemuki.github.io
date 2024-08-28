@@ -19,71 +19,72 @@ body {
 
 **********************************************************************/
 .navbar {
-  border-width: 1px 0;
-  -webkit-border-radius: 0;
-  -webkit-background-clip: padding-box;
-  -moz-border-radius: 0;
-  -moz-background-clip: padding;
-  border-radius: 0;
-  background-clip: padding-box;
+  top:200px;
   width: 100%;
+  position: fixed;
+  z-index: 999;
 }
 .navbar.stick {
   position: fixed;
-  top: 0;
+  top: 200;
   left: 0;
   background-color: rgba(255, 255, 255, .85);
 }
 .navbar-collapse {
-  -webkit-border-radius: 0;
-  -webkit-background-clip: padding-box;
-  -moz-border-radius: 0;
-  -moz-background-clip: padding;
   border-radius: 0;
   background-clip: padding-box;
-  font-family: "Open sans", Helvetica, Arial, sans-serif;
   font-weight: 300;
-  text-transform: uppercase;
+  text-transform: none;
 }
 .navbar-collapse .navbar-nav {
   float: none;
   margin: 0 auto;
   text-align: center;
 }
-.navbar-collapse .navbar-nav > li {
+.navbar-collapse .navbar-nav > li { 
   float: none;
   display: inline-block;
 }
-.navbar-collapse .navbar-nav > li > a {
-  padding: 20px 30px;
+.navbar-collapse .navbar-nav > li > a { /*菜单选项各文字要素*/
+  padding: 20px 50px;
 }
-.dropdown ul.dropdown-menu {
-  top: 85%;
-  text-align: left;
-}
-.dropdown ul.dropdown-menu > li > a {
-  padding: 5px 30px;
+.dropdown ul.dropdown-menu > li > a { /*下拉菜单字体的padding*/
+  padding: 7px 0px;
 }
 .navbar-default {
   background-color: #ffffff;
   border-color: #cccccc;
 }
+.navbar-default .navbar-nav > li {
+  position: relative;
+}
+.navbar-default .dropdown-menu {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%); 
+  min-width: 100%;
+}
 .navbar-default .navbar-nav > li > a {
-  color: #333333;
+  color: hsl(263, 58%, 14%); /*菜单字体样式*/
+  font-family: Tiger expert;
+  font-size: 16px; 
+  font-weight: 600;
 }
 .navbar-default .navbar-nav > li > a:hover,
 .navbar-default .navbar-nav > li > a:focus,
 .navbar-default .navbar-nav > .active > a,
 .navbar-default .navbar-nav > .active > a:hover,
 .navbar-default .navbar-nav > .active > a:focus {
-  color: #000000;
+  color: #8f2d2d;  /*菜单悬浮字体样式*/
 }
 .navbar-default .dropdown ul.dropdown-menu > li > a {
-  color: #333333;
+  color: #3b153f;  /*下拉菜单默认字体样式*/
+  font-family: Tiger expert;
+  font-size: 15px;
 }
 .navbar-default .dropdown ul.dropdown-menu > li > a:hover {
-  background-color: #eeeeee;
-  color: #000000;
+  background-color: #efe8f5; /*下拉菜单悬浮字体样式*/
+  color: #8f2d2d;
 }
 .navbar-default .navbar-toggle {
   border-color: #666666;
@@ -102,8 +103,8 @@ body {
 .navbar-default .navbar-nav > .open > a,
 .navbar-default .navbar-nav > .open > a:hover,
 .navbar-default .navbar-nav > .open > a:focus {
-  background-color: #ffffff;
-  color: #000000;
+  background-color: #b098da34; /*点击菜单时的选项颜色*/
+  color: #8f2d2d;
 }
 /****************************************************************************************
 
@@ -226,15 +227,19 @@ a:hover {
   background-size: cover;
   color: #7C7C7C;
   padding: 30px 0 35px 0;
-  height: 100%;
-  position: relative;
+  height: 200px;
+  width:100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
 }
 
 #head .title {
-  font-family: Stencil;
+  font-family: Broadway;
   font-size: 49px;
   font-size: 3.0625rem;
-  color: #c23a69;
+  color: #774a77bf;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -280,6 +285,20 @@ a:hover {
 /*********************************************************************
 
 
+                                Homepage image
+
+
+**********************************************************************/
+.homepage-image {
+  display: block;
+  margin: 80px auto;
+  max-width: 70%; /* 使图片适应容器宽度 */
+  padding-top:260px;
+  padding-bottom: 260px;
+}
+/*********************************************************************
+
+
                                 CONTENT
 
 
@@ -287,62 +306,7 @@ a:hover {
 img {
   max-width: 100%;
 }
-.btn {
-  font-size: 12px;
-  font-size: 0.75rem;
-  text-decoration: none;
-  text-transform: uppercase;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  color: #333;
-  -webkit-border-radius: 0px;
-  -webkit-background-clip: padding-box;
-  -moz-border-radius: 0px;
-  -moz-background-clip: padding;
-  border-radius: 0px;
-  background-clip: padding-box;
-  -webkit-transition-property: all;
-  -moz-transition-property: all;
-  -o-transition-property: all;
-  -ms-transition-property: all;
-  transition-property: all;
-  -webkit-transition-duration: 0.2s;
-  -moz-transition-duration: 0.2s;
-  -o-transition-duration: 0.2s;
-  transition-duration: 0.2s;
-  border: 0 none;
-  padding: 12px 35px;
-  text-shadow: 0 1px 0px #780d33;
-}
-.btn-primary {
-  color: #fff;
-  background-color: #bd1550;
-}
-.btn-primary:hover,
-.btn-primary:focus,
-.btn-primary:active,
-.btn-primary.active {
-  color: #fff;
-  background-color: #e61f65;
-}
-.btn-action {
-  font-weight: bold;
-  background: transparent!important;
-  border: 1px solid #333;
-  text-shadow: none;
-}
-.btn-action:hover,
-.btn-action:focus,
-.btn-action:active,
-.btn-action.active {
-  color: #bd1550;
-  border-color: #bd1550;
-}
-.btn-lg {
-  padding: 15px 60px;
-  font-size: 12px;
-  line-height: 1.33;
-  font-weight: bold;
-}
+
 .panel-cta {
   box-shadow: 0 0 0 1px #e1e1e1, 0 0 0 3px #fff, 0 0 0 4px #e1e1e1;
   background: #f3f3f3;
@@ -813,6 +777,10 @@ footer.entry-meta .meta-in {
     max-width: 1080px;
   }
 }
+.entry-content {
+  margin-top: 250px; /* head 和 navbar 总高度 */
+  padding: 20px;
+}
 /*********************************************************************
 
 
@@ -831,3 +799,4 @@ footer.entry-meta .meta-in {
       color: #004488;
    }
 }
+

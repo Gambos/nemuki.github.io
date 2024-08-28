@@ -38,21 +38,37 @@ params:
 
 menu:
   main:
-    - name: 关于
+    - name: Home
       url: /
       weight: 1
-    - name: 插画
-      url: /post/
+    - name: Profile
+      url: /profile/
       weight: 2
-    - name: OC
-      url: /post/
+    - name: Gallery
+      url: /gallery/
       weight: 3
-    - name: 世界观
+    - name: Story
       url: /post/
       weight: 4
-    - name: 委托
+    - name: Commision
       url: /post/
       weight: 5
-    - name: 联络
+    - name: Contact
       url: /post/
       weight: 6
+    - name: Illustration
+      url: /subpage1/
+      parent: Gallery
+      weight: 1
+    - name: Character Design
+      url: /subpage2/
+      parent: Gallery
+      weight: 2
+    - name: Black & White
+      url: /subpage3/
+      parent: Gallery
+      weight: 3
+    - name: Live2D Model
+      url: /subpage4/
+      parent: Gallery
+      weight: 4
